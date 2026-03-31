@@ -7,7 +7,7 @@ func _process(delta):
 func _physics_process(delta):
 	var direction = (get_global_mouse_position() - global_position)
 	
-	if Input.is_action_pressed("ui_accept"): 
+	if Input.is_action_pressed("thrust"): 
 		velocity = direction.normalized() * speed
 	else:
 		velocity.x = 0
