@@ -11,4 +11,3 @@ func _spawn_bullet():
 	instance.position = player.position;
 	add_child(instance)
 	instance.position = player.position;
-	print("connected")

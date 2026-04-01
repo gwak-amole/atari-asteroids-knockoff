@@ -15,5 +15,5 @@ bullet = ExtResource("3_foibn")
 player = NodePath("../player")
 
 [node name="small asteroid" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_ta2tx")]
-position = Vector2(452, 198)
+position = Vector2(229, -35)
 player = NodePath("../player")
