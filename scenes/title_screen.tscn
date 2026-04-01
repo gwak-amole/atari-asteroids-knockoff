@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvjw3ge5frkgj"]
+[gd_scene load_steps=13 format=3 uid="uid://dvjw3ge5frkgj"]
 
 [ext_resource type="FontFile" uid="uid://cg37xpi4pknx8" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle_Roman-Medium.ttf" id="1_gkp4b"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_hlksd"]
 [ext_resource type="FontFile" uid="uid://d0q46p0q5wr08" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Regular.ttf" id="2_642rc"]
 [ext_resource type="Texture2D" uid="uid://ca0j8umunxskm" path="res://art/large_asteroid/asteroid1.png" id="3_w76uu"]
 [ext_resource type="Texture2D" uid="uid://cjim40xg1cw04" path="res://art/large_asteroid/asteroid3.png" id="4_6ympv"]
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hlksd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -126,3 +128,5 @@ offset_top = 430.0
 offset_right = 325.0
 offset_bottom = 494.0
 texture = ExtResource("8_k2xb3")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
