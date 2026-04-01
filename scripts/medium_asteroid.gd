@@ -32,19 +32,14 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if position.x > screen_size.x + 32:
-		position.x = -32
-	elif position.x < -32:
-		position.x = screen_size.x + 32
-	if position.y > screen_size.y + 32:
-		position.y = -32
-	elif position.y < -32:
-		position.y = screen_size.y + 32
+	global_position.x = wrapf(global_position.x, -43, screen_size.x + 43)
+	global_position.y = wrapf(global_position.y, -43, screen_size.y + 43)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "bullet_area":
 		var instance1 = small_asteroid.instantiate()
 		var instance2 = small_asteroid.instantiate()
+		Signalbus.enemies_count += 1
 		spawner.add_child(instance1)
 		spawner.add_child(instance2)
 		var space_x = rng.randi_range(-20, 20)

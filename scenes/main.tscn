@@ -25,14 +25,15 @@ large_asteroid = ExtResource("7_ynaky")
 asteroid_spawner = NodePath(".")
 
 [node name="small_timer" type="Timer" parent="asteroid_spawner"]
+wait_time = 2.0
 autostart = true
 
 [node name="medium_timer" type="Timer" parent="asteroid_spawner"]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [node name="large_timer" type="Timer" parent="asteroid_spawner"]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="asteroid_spawner/small_timer" to="asteroid_spawner" method="_on_timer_timeout"]
