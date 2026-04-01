@@ -19,9 +19,9 @@ texture = ExtResource("1_6sqkr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ac4ki")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="asteroid_area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="asteroid_area"]
 shape = SubResource("CircleShape2D_swilb")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="asteroid_area" to="." method="_on_area_2d_area_entered"]

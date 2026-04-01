@@ -17,5 +17,5 @@ scale = Vector2(0.729167, 0.958333)
 polygon = PackedVector2Array(-30.1714, -13.5652, -17.8286, 4.17391, -30.1714, 22.9565, 13.7143, 4.17391)
 
 [node name="attack_cooldown" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
