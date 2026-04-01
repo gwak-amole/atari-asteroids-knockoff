@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcyvsryi5qnra"]
+
+[ext_resource type="FontFile" uid="uid://cg37xpi4pknx8" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle_Roman-Medium.ttf" id="1_drock"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_x7jyw"]
+[ext_resource type="FontFile" uid="uid://d0q46p0q5wr08" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Regular.ttf" id="2_cx10u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k17yv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_freuu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ij4xs"]
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7jyw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113049, 0.113049, 0.113049, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 208.0
+offset_right = 613.0
+offset_bottom = 328.0
+theme_override_fonts/font = ExtResource("1_drock")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 323.0
+offset_right = 593.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("2_cx10u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_k17yv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_freuu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ij4xs")
+text = "Return"
+alignment = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

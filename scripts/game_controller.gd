@@ -14,6 +14,6 @@ func _lose_life():
 	if cooldown_timer.is_stopped():
 		hp -= 1
 		heart_container.get_child(hp).hide()
-		if (hp == 0):
-			gameover = true
 		cooldown_timer.start()
+		if (hp == 0):
+			get_tree().change_scene_to_file("res://scenes/game_over.tscn")

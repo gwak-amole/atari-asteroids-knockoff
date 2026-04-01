@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=3 uid="uid://dvjw3ge5frkgj"]
+
+[ext_resource type="FontFile" uid="uid://cg37xpi4pknx8" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle_Roman-Medium.ttf" id="1_gkp4b"]
+[ext_resource type="FontFile" uid="uid://d0q46p0q5wr08" path="res://fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Regular.ttf" id="2_642rc"]
+[ext_resource type="Texture2D" uid="uid://ca0j8umunxskm" path="res://art/large_asteroid/asteroid1.png" id="3_w76uu"]
+[ext_resource type="Texture2D" uid="uid://cjim40xg1cw04" path="res://art/large_asteroid/asteroid3.png" id="4_6ympv"]
+[ext_resource type="Texture2D" uid="uid://dbfnkhhl6v0wb" path="res://art/large_asteroid/asteroid2.png" id="5_m4qr6"]
+[ext_resource type="Texture2D" uid="uid://qmisw8go31jv" path="res://art/small_asteroid/asteroid1.png" id="6_805s7"]
+[ext_resource type="Texture2D" uid="uid://dgocxljyg52ow" path="res://art/small_asteroid/asteroid3.png" id="7_gdyb6"]
+[ext_resource type="Texture2D" uid="uid://du7mg4mpfcg65" path="res://art/medium_asteroid/asteroid2.png" id="8_k2xb3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwfx"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ru63o"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hopew"]
+
+[node name="title_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133196, 0.133196, 0.133196, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -90.0
+offset_right = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gkp4b")
+theme_override_font_sizes/font_size = 70
+text = "Atari Asteroids Knockoff"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 16.0
+offset_right = 89.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_642rc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_tbwfx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ru63o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hopew")
+text = "play"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 47.0
+offset_right = 387.0
+offset_bottom = 175.0
+texture = ExtResource("3_w76uu")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 385.0
+offset_right = 1060.0
+offset_bottom = 513.0
+texture = ExtResource("4_6ympv")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 446.0
+offset_right = 262.0
+offset_bottom = 574.0
+texture = ExtResource("5_m4qr6")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 118.0
+offset_right = 438.0
+offset_bottom = 166.0
+texture = ExtResource("6_805s7")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 469.0
+offset_right = 783.0
+offset_bottom = 517.0
+texture = ExtResource("7_gdyb6")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 430.0
+offset_right = 325.0
+offset_bottom = 494.0
+texture = ExtResource("8_k2xb3")
