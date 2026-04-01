@@ -14,24 +14,30 @@ func _ready():
 	rng.randomize()
 	if (chance == 1):
 		$Sprite2D.texture = texture1
+		speed = 40.0
 	elif (chance == 2):
 		$Sprite2D.texture = texture2
-	else:
-		$Sprite2D.texture = texture3
-	var rand_pos_x = rng.randf_range(0, screen_size.x)
-	var rand_pos_y = rng.randf_range(0, screen_size.y)
-	rand_pos = Vector2(rand_pos_x, rand_pos_y)
-
-func _physics_process(delta: float) -> void:
-	if chance == 1:
-		speed = 40.0
-	elif chance == 2:
 		speed = 50.0
 	else:
+		$Sprite2D.texture = texture3
 		speed = 60.0
+	var rand_pos_x = rng.randf_range(-1.0, 1.0)
+	var rand_pos_y = rng.randf_range(-1.0, 1.0)
+	rand_pos = Vector2(rand_pos_x, rand_pos_y).normalized()
+
+func _physics_process(delta: float) -> void:
 	velocity = rand_pos.normalized() * speed
 	
 	move_and_slide()
+	
+	if position.x > screen_size.x + 32:
+		position.x = -32
+	elif position.x < -32:
+		position.x = screen_size.x + 32
+	if position.y > screen_size.y + 32:
+		position.y = -32
+	elif position.y < -32:
+		position.y = screen_size.y + 32
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "bullet_area":

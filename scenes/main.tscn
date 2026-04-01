@@ -19,7 +19,7 @@ player = NodePath("../player")
 position = Vector2(229, -35)
 
 [node name="medium_asteroid" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("5_a6cyl")]
-position = Vector2(587, 248)
+position = Vector2(740, 604)
 small_asteroid = ExtResource("4_ta2tx")
 spawner = NodePath("../asteroid_spawner")
 
