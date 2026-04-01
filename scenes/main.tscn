@@ -36,6 +36,10 @@ autostart = true
 wait_time = 4.0
 autostart = true
 
+[node name="difficulty_timer" type="Timer" parent="asteroid_spawner"]
+wait_time = 10.0
+
 [connection signal="timeout" from="asteroid_spawner/small_timer" to="asteroid_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="asteroid_spawner/medium_timer" to="asteroid_spawner" method="_on_medium_timer_timeout"]
 [connection signal="timeout" from="asteroid_spawner/large_timer" to="asteroid_spawner" method="_on_large_timer_timeout"]
+[connection signal="timeout" from="asteroid_spawner/difficulty_timer" to="asteroid_spawner" method="_on_difficulty_timer_timeout"]

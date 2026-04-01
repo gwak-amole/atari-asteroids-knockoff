@@ -62,3 +62,7 @@ func _on_large_timer_timeout() -> void:
 			instance.position = Vector2(rng.randi_range(-32, screen_size.x + 32), -32)
 		else:
 			instance.position = Vector2(rng.randi_range(-32, screen_size.x + 32), screen_size.y+32)
+
+
+func _on_difficulty_timer_timeout() -> void:
+	enemies_max += 2
