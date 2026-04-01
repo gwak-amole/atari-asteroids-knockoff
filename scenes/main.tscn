@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0mxgq2vtm8qw"]
+[gd_scene load_steps=10 format=3 uid="uid://d0mxgq2vtm8qw"]
 
 [ext_resource type="PackedScene" uid="uid://dvqmg3836n7si" path="res://scenes/player.tscn" id="1_qnapj"]
 [ext_resource type="Script" path="res://scripts/bulletspawner.gd" id="2_16hm0"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c3u0ov0lj3jwx" path="res://scenes/medium_asteroid.tscn" id="5_a6cyl"]
 [ext_resource type="Script" path="res://scripts/asteroid_spawner.gd" id="6_ih4tc"]
 [ext_resource type="PackedScene" uid="uid://bgsswpljug1c1" path="res://scenes/large_asteroid.tscn" id="7_ynaky"]
+[ext_resource type="Texture2D" uid="uid://1cbbvgv53eef" path="res://art/heart.png" id="8_hx8l1"]
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="9_dlu6t"]
 
 [node name="main" type="Node2D"]
 
@@ -38,6 +40,41 @@ autostart = true
 
 [node name="difficulty_timer" type="Timer" parent="asteroid_spawner"]
 wait_time = 10.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1149.0
+offset_bottom = 652.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_hx8l1")
+
+[node name="heart2" type="TextureRect" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_hx8l1")
+
+[node name="heart3" type="TextureRect" parent="Control/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_hx8l1")
+
+[node name="Game Controller" type="Node" parent="." node_paths=PackedStringArray("heart_container", "cooldown_timer")]
+script = ExtResource("9_dlu6t")
+heart_container = NodePath("../Control/HBoxContainer")
+cooldown_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Game Controller"]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="timeout" from="asteroid_spawner/small_timer" to="asteroid_spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="asteroid_spawner/medium_timer" to="asteroid_spawner" method="_on_medium_timer_timeout"]

@@ -19,3 +19,12 @@ polygon = PackedVector2Array(-30.1714, -13.5652, -17.8286, 4.17391, -30.1714, 22
 [node name="attack_cooldown" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="player_area" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_area"]
+position = Vector2(6, -4)
+scale = Vector2(0.729167, 0.958333)
+polygon = PackedVector2Array(-31.5428, -15.6522, -23.3143, 4.17391, -31.5428, 24, 19.2, 4.17391)
+
+[connection signal="area_entered" from="player_area" to="." method="_on_player_area_area_entered"]

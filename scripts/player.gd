@@ -18,3 +18,8 @@ func _physics_process(delta):
 		velocity.y = 0
 	
 	move_and_slide()
+
+
+func _on_player_area_area_entered(area: Area2D) -> void:
+	if area.name == "asteroid_area":
+		Signalbus.lose_life.emit()
