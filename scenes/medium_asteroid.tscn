@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3u0ov0lj3jwx"]
+[gd_scene load_steps=6 format=3 uid="uid://c3u0ov0lj3jwx"]
 
 [ext_resource type="Texture2D" uid="uid://c0rqgdpxs5myu" path="res://art/medium_asteroid/asteroid1.png" id="1_0hxbj"]
 [ext_resource type="Script" path="res://scripts/medium_asteroid.gd" id="1_uamps"]
+[ext_resource type="PackedScene" uid="uid://cpuhphpa3mg2w" path="res://scenes/small_asteroid.tscn" id="2_1n0su"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5udv2"]
 radius = 27.0185
@@ -11,6 +12,7 @@ radius = 30.0
 
 [node name="medium_asteroid" type="CharacterBody2D"]
 script = ExtResource("1_uamps")
+small_asteroid = ExtResource("2_1n0su")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -4,9 +4,9 @@ extends CharacterBody2D
 @export var spawner: Node
 @onready var screen_size = get_viewport().get_visible_rect().size
 
-var texture1 = preload("res://art/small_asteroid/asteroid1.png")
-var texture2 = preload("res://art/small_asteroid/asteroid2.png")
-var texture3 = preload("res://art/small_asteroid/asteroid1.png")
+var texture1 = preload("res://art/medium_asteroid/asteroid1.png")
+var texture2 = preload("res://art/medium_asteroid/asteroid2.png")
+var texture3 = preload("res://art/medium_asteroid/asteroid3.png")
 var rng = RandomNumberGenerator.new()
 var chance = rng.randi_range(1, 3)
 var speed = 0.0;
