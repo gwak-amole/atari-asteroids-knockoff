@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var small_asteroid: PackedScene
+@export var spawner: Node
 @onready var screen_size = get_viewport().get_visible_rect().size
 
 var texture1 = preload("res://art/small_asteroid/asteroid1.png")
@@ -22,6 +24,7 @@ func _ready():
 	var rand_pos_y = rng.randf_range(0, screen_size.y)
 	rand_pos = Vector2(rand_pos_x, rand_pos_y)
 
+
 func _physics_process(delta: float) -> void:
 	if chance == 1:
 		speed = 40.0
@@ -35,4 +38,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "bullet_area":
+		var instance1 = small_asteroid.instantiate()
+		var instance2 = small_asteroid.instantiate()
+		spawner.add_child(instance1)
+		spawner.add_child(instance2)
+		var space_x = rng.randi_range(-20, 20)
+		var space_y = rng.randi_range(-20, 20)
+		instance1.position = Vector2(position.x - space_x, position.y - space_y)
+		instance2.position = Vector2(position.x + space_x, position.y + space_y)
 		queue_free()
