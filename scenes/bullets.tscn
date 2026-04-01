@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg30r36q7eh5s"]
+[gd_scene load_steps=4 format=3 uid="uid://bg30r36q7eh5s"]
 
 [ext_resource type="Texture2D" uid="uid://kxc2oc62w7v7" path="res://art/bullet.png" id="1_8d5rh"]
 [ext_resource type="Script" path="res://scripts/bullets.gd" id="1_i3arh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn0iw"]
+size = Vector2(20, 7)
 
 [node name="bullets" type="CharacterBody2D"]
 script = ExtResource("1_i3arh")
@@ -9,3 +12,9 @@ script = ExtResource("1_i3arh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_8d5rh")
+
+[node name="bullet_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_area"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_hn0iw")

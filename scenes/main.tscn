@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0mxgq2vtm8qw"]
+[gd_scene load_steps=5 format=3 uid="uid://d0mxgq2vtm8qw"]
 
 [ext_resource type="PackedScene" uid="uid://dvqmg3836n7si" path="res://scenes/player.tscn" id="1_qnapj"]
 [ext_resource type="Script" path="res://scripts/bulletspawner.gd" id="2_16hm0"]
 [ext_resource type="PackedScene" uid="uid://bg30r36q7eh5s" path="res://scenes/bullets.tscn" id="3_foibn"]
+[ext_resource type="PackedScene" uid="uid://cpuhphpa3mg2w" path="res://scenes/small_asteroid.tscn" id="4_ta2tx"]
 
 [node name="main" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_qnapj")]
 
-[node name="Spawner" type="Node" parent="." node_paths=PackedStringArray("player")]
+[node name="bullet_spawner" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("2_16hm0")
 bullet = ExtResource("3_foibn")
+player = NodePath("../player")
+
+[node name="small asteroid" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_ta2tx")]
+position = Vector2(452, 198)
 player = NodePath("../player")
